@@ -1,0 +1,1 @@
+mean_person,_,destroy weaklings,_,5,_,4
