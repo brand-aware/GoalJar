@@ -44,3 +44,8 @@ Temporary Items
 
 # java class files
 *.class
+
+# eclipse
+.project
+.classpath
+.perfs
