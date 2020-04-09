@@ -44,3 +44,16 @@ Temporary Items
 
 # java class files
 *.class
+bin
+
+# eclipse files
+.settings
+.project
+.classpath
+
+# application data
+save_data
+userlist.txt
+usersettings.txt
+settings
+outline.txt
