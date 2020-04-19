@@ -9,6 +9,7 @@ import java.io.File;
 public class Properties {
 	
 	private String rootDir;
+	private String userDir;
 	private String img;
 	private String company;
 	private String logo;
@@ -21,15 +22,38 @@ public class Properties {
 	private String path = "";
 	private int progress = -1;
 	
-	public Properties(String root){
+	public Properties(String root, String usrDir){
 		rootDir = root;
+		userDir = usrDir;
 		username = "";
 		img = rootDir + File.separator + "img";
 		company = img + File.separator + "company.png";
 		logo = img + File.separator + "logo.png";
-		userlist = rootDir + File.separator + "settings" + File.separator + "userlist.txt";
-		usersettings = rootDir + File.separator + "settings" + File.separator + "usersettings.txt";
-		saveDir = rootDir + File.separator + "save_data";
+		String companyPath = userDir + File.separator + "AppData" + File.separator + "Local"
+				+ File.separator + "brand-aware";
+		File companyFolder = new File(companyPath);
+		if(!companyFolder.exists()) {
+			companyFolder.mkdir();
+		}
+		
+		String productPath = companyPath + File.separator + "goal_jar";
+		File productFolder = new File(productPath);
+		if(!productFolder.exists()) {
+			productFolder.mkdir();
+		}
+		
+		userlist = productPath + File.separator + "userlist.txt";
+		String settingsPath = productPath + File.separator + "settings";
+		File settingsFolder = new File(settingsPath);
+		if(!settingsFolder.exists()) {
+			settingsFolder.mkdir();
+		}
+		usersettings = settingsPath + File.separator + "usersettings.txt";
+		saveDir = productPath + File.separator + "save_data";
+		File saveFolder = new File(saveDir);
+		if(!saveFolder.exists()) {
+			saveFolder.mkdir();
+		}
 	}
 	
 	public String getRootDir(){

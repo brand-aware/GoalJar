@@ -42,6 +42,7 @@ public class JarScreen extends IOJar {
 		mainPage.setIconImage(company);
 		mainPage.setPreferredSize(new Dimension(BACKGROUND_WIDTH, BACKGROUND_HEIGHT + LOGO_HEIGHT));
 		mainPage.setBounds(0, 0, BACKGROUND_WIDTH, BACKGROUND_HEIGHT + LOGO_HEIGHT);
+		mainPage.setLocation(250, 50);
 		
 		menuBar = new JMenuBar();
 		mainPage.setJMenuBar(menuBar);
@@ -294,10 +295,12 @@ public class JarScreen extends IOJar {
 				goalList, goalList[0]);
 		if(input != null){
 			String goal = input.toString();
-			properties.setGoal(goal);
-			description.setText(goal);
-			loadGoal();
-			updateBackground();
+			if(goal.compareTo("<empty>") != 0) {
+				properties.setGoal(goal);
+				description.setText(goal);
+				loadGoal();
+				updateBackground();
+			}
 		}
 	}
 	

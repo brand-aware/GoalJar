@@ -64,7 +64,7 @@ public class IOJar extends CommonJar{
 			
 			return list;
 		}
-		return null;
+		return new String[] {"<empty>"};
 	}
 	
 	protected boolean saveNewUser() throws IOException{
