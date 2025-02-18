@@ -143,7 +143,6 @@ public class JarScreen extends IOJar {
 		@Override
 		public void actionPerformed(ActionEvent event) {
 			if(event.getSource() == add){
-				System.out.println("add: " + properties.getPath() + ", " + properties.getProgress());
 				properties.incrementProgress();
 				updateBackground();
 				try {
@@ -250,11 +249,9 @@ public class JarScreen extends IOJar {
 				new ImageIcon(properties.getCompany()), list, list[0]);
 		if(input != null){
 			String username = input.toString();
-			System.out.println(properties.getUsername() + ", " + properties.getPath() + ", " + properties.getProgress());
 			if(username.compareTo(EMPTY_USERNAME) != 0){
 				properties.setUsername(username);
 				loadUserProfile();
-				System.out.println(properties.getUsername() + ", " + properties.getPath() + ", " + properties.getProgress());
 				updateBackground();
 			}else{
 				actionMenu.setEnabled(false);

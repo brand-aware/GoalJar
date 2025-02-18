@@ -8,11 +8,9 @@ import core.Properties;
 public class driver {
 
 	public static void main(String[] args) {
-		if(args.length != 2){
-			System.out.println("Program syntax: java driver <root dir> <user dir>");
-			System.exit(0);
-		}
-		Properties properties = new Properties(args[0], args[1]);
+		String currentDir = System.getProperty("user.dir");
+		String userDir = System.getProperty("user.home");
+		Properties properties = new Properties(currentDir, userDir);
 		JarScreen jarScreen = new JarScreen(properties);
 		jarScreen.init();
 	}
