@@ -454,9 +454,9 @@ public class JarScreen extends IOJar {
 	
 	private void doAbout(){
 		JOptionPane.showMessageDialog(null, 
-				"product\ngoal_jar\n\nby\n???\n\ncontact:\n"
-				+ "mike.drummond.802@hotmail.com", 
-				"about ???", 
+				"product\ngoal_jar\n\nby\nbrand-aware\n\ncontact:\n"
+				+ "wontzer@gmail.com", 
+				"about brand-aware", 
 				JOptionPane.INFORMATION_MESSAGE, 
 				new ImageIcon(properties.getCompany()));
 	}
